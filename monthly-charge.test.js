@@ -1,4 +1,4 @@
-const monthlyCharge = require('./monthly-charge');
+const monthlyCharge = require('./jessie-solution');
 
 const userNeverDeactivated1 = {
     id: 1,
@@ -136,10 +136,6 @@ describe('monthlyCharge', function () {
         expect(monthlyCharge('2045-04', plan, users2)).toBe(5000);
     });
 
-    it('works when a user is deactivated on the first day of the month', () => {
-        expect(monthlyCharge('2019-02', easyMathForFebruaryPlan, users5)).toBe(1);
-    });
-
     it('works with no users', function() {
         expect(monthlyCharge('2019-01', plan, [])).toBe(0);
     });
@@ -164,4 +160,8 @@ describe('monthlyCharge', function () {
     it('works when 0 users have ever been active', function() {
         expect(monthlyCharge('2019-01', plan, [userInactive])).toBe(0);
     });
+
+    it('works when a user is deactivated on the first day of the month', () => {
+      expect(monthlyCharge('2019-02', easyMathForFebruaryPlan, users5)).toBe(1);
+  });
 });

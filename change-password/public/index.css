@@ -1,0 +1,12 @@
+.card.no-alert .card-header {
+    background-color: #fff;
+}
+
+.has-alert {
+    background-color: #ffeed0;
+}
+
+.cta {
+    display: flex;
+    justify-content: flex-end;
+}
